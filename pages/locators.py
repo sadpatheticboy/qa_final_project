@@ -16,3 +16,4 @@ class ProductPageLocators:
     PRODUCT_PRICE_BASKET = (By.CSS_SELECTOR, ".basket-mini")
     PRODUCT_NAME_PAGE = (By.CSS_SELECTOR, " div > h1")
     PRODUCT_NAME_BASKET = (By.CSS_SELECTOR, "#messages > div:nth-child(1) > div > strong")
+    SUCCESS_MESSAGE = (By.CSS_SELECTOR, "#messages > div:nth-child(1) > div")
