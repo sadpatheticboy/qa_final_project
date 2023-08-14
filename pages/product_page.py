@@ -12,7 +12,7 @@ class ProductPage(BasePage):
         product_price_value = product_price_page.text
 
         product_price_basket = self.browser.find_element(*ProductPageLocators.PRODUCT_PRICE_BASKET)
-        product_price_basket_value = product_price_basket.text[14:-12]
+        product_price_basket_value = product_price_basket.text[14:-12]  # Выбираю цену путем слайса строки
 
         assert product_price_value == product_price_basket_value, \
             f"Expeсted price: {product_price_value}. Actual price: {product_price_basket_value}."
