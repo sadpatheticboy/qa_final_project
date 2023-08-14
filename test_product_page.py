@@ -7,6 +7,9 @@ import time
 
 @pytest.mark.need_review
 def test_guest_can_add_product_to_basket(browser):
+    """
+    Проверка того, что гость может добавить товар в корзину
+    """
     link = "https://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207"
     page = ProductPage(browser, link)
     page.open()
@@ -21,6 +24,9 @@ def test_guest_can_add_product_to_basket(browser):
 
 @pytest.mark.xfail
 def test_guest_cant_see_success_message_after_adding_product_to_basket(browser):
+    """
+    (Отрцитательный тест) Проверка того, что гость не видит сообщение об успешности после добавления в корзинк
+    """
     link = "https://selenium1py.pythonanywhere.com/ru/catalogue/coders-at-work_207/"
     page = ProductPage(browser, link)
     page.open()
@@ -31,6 +37,9 @@ def test_guest_cant_see_success_message_after_adding_product_to_basket(browser):
 
 @pytest.mark.xfail
 def test_message_disappeared_after_adding_product_to_basket(browser):
+    """
+    (Отрицательный тест) Проверка того, что сообщение о добавлении товара исчезает со временем
+    """
     link = "https://selenium1py.pythonanywhere.com/ru/catalogue/coders-at-work_207/"
     page = ProductPage(browser, link)
     page.open()
@@ -40,6 +49,9 @@ def test_message_disappeared_after_adding_product_to_basket(browser):
 
 
 def test_guest_should_see_login_link_on_product_page(browser):
+    """
+    Проверка того, что у гостя отображается кнопка авторизации
+    """
     link = "https://selenium1py.pythonanywhere.com/en-gb/catalogue/the-city-and-the-stars_95/"
     page = ProductPage(browser, link)
     page.open()
@@ -49,6 +61,9 @@ def test_guest_should_see_login_link_on_product_page(browser):
 
 @pytest.mark.need_review
 def test_guest_can_go_to_login_page_from_product_page(browser):
+    """
+    Проверка того, что гость может зайти на страницу авторизации со страницы товара
+    """
     link = "https://selenium1py.pythonanywhere.com/en-gb/catalogue/the-city-and-the-stars_95/"
     page = ProductPage(browser, link)
     page.open()
@@ -58,6 +73,9 @@ def test_guest_can_go_to_login_page_from_product_page(browser):
 
 @pytest.mark.need_review
 def test_guest_cant_see_product_in_basket_opened_from_product_page(browser):
+    """
+    Проверка того, что гость вид изначально пустую корзину
+    """
     link = "https://selenium1py.pythonanywhere.com/en-gb/"
     page = ProductPage(browser, link)
     page.open()
@@ -69,6 +87,10 @@ def test_guest_cant_see_product_in_basket_opened_from_product_page(browser):
 
 @pytest.mark.product_user
 class TestUserAddToBasketFromProductPage:
+    """
+    Тест-кейсы с действиями зарегистрированного пользователя на странице товаров
+    """
+
     @pytest.fixture(scope="function", autouse=True)
     def setup(self, browser):
         link = "https://selenium1py.pythonanywhere.com/ru/accounts/login/"
@@ -81,6 +103,9 @@ class TestUserAddToBasketFromProductPage:
 
     @pytest.mark.need_review
     def test_user_can_add_product_to_basket(self, browser):
+        """
+        Проверка возможности того, что пользователь смог добавить товар в коризну
+        """
         link = "https://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207"
         page = ProductPage(browser, link)
         page.open()
@@ -90,6 +115,9 @@ class TestUserAddToBasketFromProductPage:
         page.should_be_correct_name()
 
     def test_user_cant_see_success_message(self, browser):
+        """
+        Проверка того, что пользователь не видит сообщение об успехе без действий добавления в корзину
+        """
         link = "https://selenium1py.pythonanywhere.com/ru/catalogue/coders-at-work_207/"
         page = ProductPage(browser, link)
         page.open()

@@ -6,7 +6,14 @@ import pytest
 
 @pytest.mark.login_guest
 class TestLoginFromMainPage:
+    """
+    Тест-кейсы с действиями гостя на главной странице
+    """
+
     def test_guest_can_go_to_login_page(self, browser):
+        """
+        Проверка того, что гость может перейти на страницу логина с главной страницы
+        """
         link = "https://selenium1py.pythonanywhere.com"
         page = MainPage(browser, link)
         page.open()
@@ -16,6 +23,9 @@ class TestLoginFromMainPage:
         login_page.should_be_login_page()
 
     def test_guest_should_see_login_link(self, browser):
+        """
+        Проверка того, что гость видит кнопку авторизации
+        """
         link = "https://selenium1py.pythonanywhere.com/"
         page = MainPage(browser, link)
         page.open()
@@ -24,6 +34,9 @@ class TestLoginFromMainPage:
 
 
 def test_guest_cant_see_product_in_basket_opened_from_main_page(browser):
+    """
+    Проверка того, что у гостя корзина пустая. Переход в корзину идет с главной страницы
+    """
     link = "https://selenium1py.pythonanywhere.com/en-gb/"
     page = MainPage(browser, link)
     page.open()
