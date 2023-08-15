@@ -12,14 +12,14 @@
 
 ## Как запустить проект?
 
-### Копирование репозитория
+### Клонирование репозитория
 ```
 git clone https://github.com/sadpatheticboy/qa_final_project.git
 cd qa_final_project
 pip install -r requirements.txt 
 ```
 
-### Установка всего необходимого
+### Установка всех пакетов
 ```
 pip install -r requirements.txt 
 ```
