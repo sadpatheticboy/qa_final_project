@@ -16,7 +16,6 @@
 ```
 git clone https://github.com/sadpatheticboy/qa_final_project.git
 cd qa_final_project
-pip install -r requirements.txt 
 ```
 
 ### Установка всех пакетов
