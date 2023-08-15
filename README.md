@@ -19,6 +19,11 @@ cd qa_final_project
 pip install -r requirements.txt 
 ```
 
+### Установка всего необходимого
+```
+pip install -r requirements.txt 
+```
+
 ### Запуск необходимых тестов
 ```
 pytest -v --tb=line --language=en -m need_review
